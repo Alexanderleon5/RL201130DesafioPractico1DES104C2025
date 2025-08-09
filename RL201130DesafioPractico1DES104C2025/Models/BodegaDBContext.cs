@@ -12,7 +12,8 @@ namespace RL201130DesafioPractico1DES104C2025.Models
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Proveedor> Proveedores { get; set; }
         public DbSet<Producto> Productos { get; set; }
+        public DbSet<Movimiento> Movimientos { get; set; }
 
-        
+
     }
 }

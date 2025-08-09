@@ -12,7 +12,7 @@ using RL201130DesafioPractico1DES104C2025.Models;
 namespace RL201130DesafioPractico1DES104C2025.Migrations
 {
     [DbContext(typeof(BodegaDBContext))]
-    [Migration("20250809062926_Base y Seed")]
+    [Migration("20250809072250_Base y Seed")]
     partial class BaseySeed
     {
         /// <inheritdoc />

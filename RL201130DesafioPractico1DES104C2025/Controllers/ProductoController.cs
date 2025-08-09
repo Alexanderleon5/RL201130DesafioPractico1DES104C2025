@@ -21,9 +21,13 @@ namespace RL201130DesafioPractico1DES104C2025.Controllers
         // GET: Producto
         public async Task<IActionResult> Index(string searchString)
         {
-            ViewData["CurrentFilter"] = searchString; // Guarda el filtro actual
+            ViewData["CurrentFilter"] = searchString;
 
-            var productos = _context.Productos.Include(p => p.Categoria).AsQueryable();
+            // Incluye ambas relaciones: Categoria Y Proveedor
+            var productos = _context.Productos
+                .Include(p => p.Categoria)
+                .Include(p => p.Proveedor) // Esta línea es la que faltaba
+                .AsQueryable();
 
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -33,7 +37,6 @@ namespace RL201130DesafioPractico1DES104C2025.Controllers
 
             return View(await productos.ToListAsync());
         }
-
         // GET: Producto/Create
         public IActionResult Create()
         {
