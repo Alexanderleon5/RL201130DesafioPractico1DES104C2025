@@ -1,44 +1,22 @@
-﻿@model RL201130DesafioPractico1DES104C2025.Models.Movimiento
-@using RL201130DesafioPractico1DES104C2025.Models
+﻿@model RL201130DesafioPractico1DES104C2025.Models.Categoria
 
 @{
-    ViewData["Title"] = "Crear Movimiento";
+    ViewData["Title"] = "Crear";
 }
 
-<h1>Crear Movimiento</h1>
+<h1>Crear</h1>
 
+<h4>Categoria</h4>
+<hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
             <div class="form-group">
-                <label asp-for="ProductoID" class="control-label"></label>
-                <select asp-for="ProductoID" class="form-control" asp-items="ViewBag.ProductoID"></select>
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
             </div>
-
-            <div class="form-group">
-                <label asp-for="Fecha" class="control-label"></label>
-                <input asp-for="Fecha" class="form-control" />
-                <span asp-validation-for="Fecha" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Cantidad" class="control-label"></label>
-                <input asp-for="Cantidad" class="form-control" />
-                <span asp-validation-for="Cantidad" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Tipo" class="control-label"></label>
-                <select asp-for="Tipo" class="form-control">
-                    <option value="">-- Seleccione Tipo --</option>
-                    <option value="0">Entrada de Producto</option>
-                    <option value="1">Salida de Producto</option>
-                </select>
-                <span asp-validation-for="Tipo" class="text-danger"></span>
-            </div>
-
             <div class="form-group">
                 <input type="submit" value="Crear" class="btn btn-primary" />
             </div>
@@ -47,7 +25,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Regresar a la lista.</a>
+    <a asp-action="Index">Regresar a la lista</a>
 </div>
 
 @section Scripts {
